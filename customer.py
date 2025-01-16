@@ -13,9 +13,6 @@ class Customer:
         return f"Customer({self.id}, '{self.first_name}', '{self.last_name}', '{self.address}', '{self.mobile}')"
 
     def __eq__(self, other):
-        if not isinstance(other, Customer):
-            return NotImplemented
-
         return (isinstance(other, Customer) and
                 self.id == other.id and
                 self.first_name == other.first_name and
