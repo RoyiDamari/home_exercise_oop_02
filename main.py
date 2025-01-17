@@ -7,7 +7,7 @@ def main():
     sl.connection("customers.db")
 
     sl.run_query_update('''
-    CREATE TABLE IF NOT EXISTS customers (
+    CREATE TABLE IF NOT EXISTS Customers (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         first_name TEXT NOT NULL,
         last_name TEXT NOT NULL,
