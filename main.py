@@ -17,13 +17,13 @@ def main():
 
     def insert_customer(customer):
         sl.run_query_update('''
-           INSERT INTO customers (first_name, last_name, address, mobile)
+           INSERT INTO Customers (first_name, last_name, address, mobile)
            VALUES (?, ?, ?, ?);
            ''', (customer.first_name, customer.last_name, customer.address, customer.mobile))
 
     def print_all_customers() -> list[Customer]:
         result = sl.run_query_select('''
-            SELECT * FROM customers;
+            SELECT * FROM Customers;
         ''');
 
         list_result = []
