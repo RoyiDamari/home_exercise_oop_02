@@ -1,5 +1,5 @@
 import sqlite_lib as sl
-from customer import Customer
+from Customer import Customer
 
 
 def main():
