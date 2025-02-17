@@ -1,5 +1,5 @@
 import sqlite_lib as sl
-from customer import Customer
+from Customer import Customer
 
 
 def main():
@@ -7,7 +7,7 @@ def main():
     sl.connection("customers.db")
 
     sl.run_query_update('''
-    CREATE TABLE IF NOT EXISTS customers (
+    CREATE TABLE IF NOT EXISTS Customers (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         first_name TEXT NOT NULL,
         last_name TEXT NOT NULL,
@@ -17,13 +17,13 @@ def main():
 
     def insert_customer(customer):
         sl.run_query_update('''
-           INSERT INTO customers (first_name, last_name, address, mobile)
+           INSERT INTO Customers (first_name, last_name, address, mobile)
            VALUES (?, ?, ?, ?);
            ''', (customer.first_name, customer.last_name, customer.address, customer.mobile))
 
     def print_all_customers() -> list[Customer]:
         result = sl.run_query_select('''
-            SELECT * FROM customers;
+            SELECT * FROM Customers;
         ''');
 
         list_result = []
